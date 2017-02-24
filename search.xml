@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2017%2F02%2F24%2Ftest%2F</url>
+      <content type="text"><![CDATA[console.log('Hello world');]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[将一个String和多个String值进行比较]]></title>
+      <url>%2F2017%2F02%2F22%2F%E5%B0%86%E4%B8%80%E4%B8%AAString%E5%92%8C%E5%A4%9A%E4%B8%AAString%E5%80%BC%E8%BF%9B%E8%A1%8C%E6%AF%94%E8%BE%83%2F</url>
+      <content type="text"><![CDATA[我们经常需要将一个String和多个String值进行比较。最初的反应是使用||符号连接多个===完成，比如： if (string === 'banana' || string === 'pineapple' || string === 'mongo' || string === 'lemon') &#123; fruitColor = 'yellow';&#125; Switchswitch(string) &#123; case 'banana': case 'pineapple': case 'mongo': case 'lemon': fruitColor = 'yellow';&#125; Arrayif (['banana', 'pineapple', 'mongo', 'lemon'].indexOf(string) &gt;= 0) &#123; fruitColor = 'yellow';&#125; JQueryif($.inArray(str, ['Apple', 'Orange', 'Grapes', 'Pear']) &gt;= 0)&#123; fruitColor = 'yellow';&#125; 正则表达式if (/^(banana|pineapple|mongo|lemon)$/.test(string)) &#123; fruitColor = 'yellow';&#125;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[一些没用的JS技巧(手动滑稽)]]></title>
+      <url>%2F2017%2F02%2F21%2F%E4%B8%80%E4%BA%9B%E6%B2%A1%E7%94%A8%E7%9A%84JS%E6%8A%80%E5%B7%A7-%E6%89%8B%E5%8A%A8%E6%BB%91%E7%A8%BD%2F</url>
+      <content type="text"><![CDATA[快速打印一个五分制的评分情况function getRating(rating) &#123; if(rating &gt; 5 || rating &lt; 0) throw new Error('数字不在范围内'); return '★★★★★☆☆☆☆☆'.substring(5 - rating, 10 - rating );&#125; 输出 n 个”abc”拼接的字符串,abc可换成其他，原理是把数组各个空的元素用’abc’来分隔var str = new Array(n+1).join('abc'); 数字补0，例如：56 =&gt; 0056 (format(56, 4))function format(n, length) &#123; return (Array(length).join('0') + n).substr(-length);&#125; 条件判断var sb = true; //普通方式 if (sb) { alert('You are sb!'); } else { alert('You are not sb!'); } //二逼青年专用方式 sb &amp;&amp; alert('You are sb!'); sb || alert('You are not sb!'); a||b :只有在a为fasle或者返回false时才会执行b,当a为true 时,直接返回a,后面的b不会执行a&amp;&amp;b :只有在a为true 或者返回true 时才会执行b,当a为false时,直接返回a,后面的b不会执行]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[JS判断滚动条向上还是向下]]></title>
+      <url>%2F2017%2F02%2F20%2FJS%E5%88%A4%E6%96%AD%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%90%91%E4%B8%8A%E8%BF%98%E6%98%AF%E5%90%91%E4%B8%8B%2F</url>
+      <content type="text"><![CDATA[scroll(function(direction) &#123; console.log(direction) &#125;); function scroll( fn ) &#123; var beforeScrollTop = document.body.scrollTop; var fn = fn || function() &#123;&#125;; window.addEventListener("scroll", function() &#123; var afterScrollTop = document.body.scrollTop; var delta = afterScrollTop - beforeScrollTop; if( delta === 0 ) return false; fn( delta &gt; 0 ? "down" : "up" ); beforeScrollTop = afterScrollTop; &#125;, false);&#125;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[${标签}：${换行文字}简单实现]]></title>
+      <url>%2F2017%2F02%2F20%2F%24%7B%E6%A0%87%E7%AD%BE%7D%EF%BC%9A%24%7B%E6%8D%A2%E8%A1%8C%E6%96%87%E5%AD%97%7D%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%2F</url>
+      <content type="text"><![CDATA[web开发的很多时候需要实现下面这样的效果 地址：广东省广州市天河区天河北路900号高科大厦XXXXXXX XXXXXX 比较简单的办法可以像下面这样，利用table &lt;div style="display:table"&gt; &lt;p style="display:table-cell;white-space:nowrap;"&gt;地址：&lt;/p&gt; &lt;p style="display:table-cell;"&gt;广东省广州市天河区天河北路900号高科大厦XXXXXXXXXXXXX&lt;/p&gt;&lt;/div&gt; 使用scss的情况 html: &lt;div class="label-text"&gt; &lt;p class="text-no-wrap"&gt;地址：&lt;/p&gt; &lt;p&gt;广东省广州市天河区天河北路900号高科大厦XXXXXXXXXXXXX&lt;/p&gt;&lt;/div&gt; scss: .label-text &#123; display: table; &gt; div,p,span &#123; display: table-cell; &#125; .text-no-wrap &#123; white-space: nowrap; &#125;&#125;]]></content>
+    </entry>
+
+    
+  
+  
+</search>
