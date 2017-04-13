@@ -3,13 +3,6 @@
   
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>%2F2017%2F02%2F24%2Ftest%2F</url>
-      <content type="text"><![CDATA[console.log('Hello world');]]></content>
-    </entry>
-
-    
-    <entry>
       <title><![CDATA[将一个String和多个String值进行比较]]></title>
       <url>%2F2017%2F02%2F22%2F%E5%B0%86%E4%B8%80%E4%B8%AAString%E5%92%8C%E5%A4%9A%E4%B8%AAString%E5%80%BC%E8%BF%9B%E8%A1%8C%E6%AF%94%E8%BE%83%2F</url>
       <content type="text"><![CDATA[我们经常需要将一个String和多个String值进行比较。最初的反应是使用||符号连接多个===完成，比如： if (string === 'banana' || string === 'pineapple' || string === 'mongo' || string === 'lemon') &#123; fruitColor = 'yellow';&#125; Switchswitch(string) &#123; case 'banana': case 'pineapple': case 'mongo': case 'lemon': fruitColor = 'yellow';&#125; Arrayif (['banana', 'pineapple', 'mongo', 'lemon'].indexOf(string) &gt;= 0) &#123; fruitColor = 'yellow';&#125; JQueryif($.inArray(str, ['Apple', 'Orange', 'Grapes', 'Pear']) &gt;= 0)&#123; fruitColor = 'yellow';&#125; 正则表达式if (/^(banana|pineapple|mongo|lemon)$/.test(string)) &#123; fruitColor = 'yellow';&#125;]]></content>
