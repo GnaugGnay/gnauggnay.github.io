@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[使用table-cell来完成水平垂直居中]]></title>
+      <url>%2F2017%2F05%2F31%2F%E4%BD%BF%E7%94%A8table-cell%E6%9D%A5%E5%AE%8C%E6%88%90%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%2F</url>
+      <content type="text"><![CDATA[水平垂直居中是一个老生常谈的问题了，使用flexbox可以很完美地实现但是有兼容性的问题，使用position:absolute的话要求内容的宽高是固定的，不然的话还是需要使用到transform,这样的话还是有兼容性的问题。 如果是移动端的话建议还是直接使用flexbox来完成垂直居中的效果，所以这里就说说在PC端的实现,直接上代码。 css部分: .container &#123;display: table-cell;text-align: center; vertical-align: middle; width: 300px;height: 300px;background-color: #eee;&#125;.child &#123;display: inline-block; width: 100px;height:100px;background-color: #ddd; &#125; html部分: &lt;body&gt; &lt;div class="container"&gt; &lt;div class="child"&gt; &lt;/div&gt; &lt;/div&gt;&lt;/body&gt; chrome下效果 那如果子容器宽高是百分比呢？改写css .child &#123;display: inline-block; width: 50%;height:50%;background-color: #ddd; &#125; chrome下效果 好像也是目标的效果。 再来看看IE8下面的表现 完美兼容IE8，但是在IE7下面就会有问题了。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[将一个String和多个String值进行比较]]></title>
       <url>%2F2017%2F02%2F22%2F%E5%B0%86%E4%B8%80%E4%B8%AAString%E5%92%8C%E5%A4%9A%E4%B8%AAString%E5%80%BC%E8%BF%9B%E8%A1%8C%E6%AF%94%E8%BE%83%2F</url>
       <content type="text"><![CDATA[我们经常需要将一个String和多个String值进行比较。最初的反应是使用||符号连接多个===完成，比如： if (string === 'banana' || string === 'pineapple' || string === 'mongo' || string === 'lemon') &#123; fruitColor = 'yellow';&#125; Switchswitch(string) &#123; case 'banana': case 'pineapple': case 'mongo': case 'lemon': fruitColor = 'yellow';&#125; Arrayif (['banana', 'pineapple', 'mongo', 'lemon'].indexOf(string) &gt;= 0) &#123; fruitColor = 'yellow';&#125; JQueryif($.inArray(str, ['Apple', 'Orange', 'Grapes', 'Pear']) &gt;= 0)&#123; fruitColor = 'yellow';&#125; 正则表达式if (/^(banana|pineapple|mongo|lemon)$/.test(string)) &#123; fruitColor = 'yellow';&#125;]]></content>
