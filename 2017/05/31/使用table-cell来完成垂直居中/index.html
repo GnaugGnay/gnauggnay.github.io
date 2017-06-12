@@ -99,18 +99,18 @@ css部分:
 如果是移动端的话建议还是直接使用flexbox来完成垂直居中的效果，所以这里就说说在PC端的实现,直接上代码。
 css部分:
 .container &amp;#123;displa">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/sync?method=download&fileId=WEBe8613a82be78dbd4063d4a50fd8734d1&version=564&cstk=0ZgL6G-0">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/sync?method=download&fileId=WEBf78824997eb5a19d170e402baffbbf37&version=565&cstk=0ZgL6G-0">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/sync?method=download&fileId=WEB4557bf13b69776e518d3dd90fdb23f66&version=566&cstk=0ZgL6G-0">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/sync?method=download&fileId=WEB0d8ff7d4f009a57fb0029b4bb0ad18ed&version=567&cstk=0ZgL6G-0">
-<meta property="og:updated_time" content="2017-05-31T06:33:56.622Z">
+<meta property="og:image" content="http://yoursite.com/images/chrome-fixed.png">
+<meta property="og:image" content="http://yoursite.com/images/chrome-percent.png">
+<meta property="og:image" content="http://yoursite.com/images/ie-fixed.png">
+<meta property="og:image" content="http://yoursite.com/images/ie-percent.png">
+<meta property="og:updated_time" content="2017-06-12T07:59:56.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用table-cell来完成水平垂直居中">
 <meta name="twitter:description" content="水平垂直居中是一个老生常谈的问题了，使用flexbox可以很完美地实现但是有兼容性的问题，使用position:absolute的话要求内容的宽高是固定的，不然的话还是需要使用到transform,这样的话还是有兼容性的问题。
 如果是移动端的话建议还是直接使用flexbox来完成垂直居中的效果，所以这里就说说在PC端的实现,直接上代码。
 css部分:
 .container &amp;#123;displa">
-<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/sync?method=download&fileId=WEBe8613a82be78dbd4063d4a50fd8734d1&version=564&cstk=0ZgL6G-0">
+<meta name="twitter:image" content="http://yoursite.com/images/chrome-fixed.png">
 
 
 
@@ -411,18 +411,18 @@ css部分:
 <ul>
 <li>chrome下效果</li>
 </ul>
-<p><img src="https://note.youdao.com/yws/api/personal/sync?method=download&amp;fileId=WEBe8613a82be78dbd4063d4a50fd8734d1&amp;version=564&amp;cstk=0ZgL6G-0" alt="image"></p>
+<p><img src="/images/chrome-fixed.png" alt="image"></p>
 <p>那如果子容器宽高是百分比呢？改写css</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.child</span> &#123;</div><div class="line"><span class="attribute">display</span>: inline-block; </div><div class="line"><span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line"><span class="attribute">height</span>:<span class="number">50%</span>;</div><div class="line"><span class="attribute">background-color</span>: <span class="number">#ddd</span>;     </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li>chrome下效果</li>
 </ul>
-<p><img src="https://note.youdao.com/yws/api/personal/sync?method=download&amp;fileId=WEBf78824997eb5a19d170e402baffbbf37&amp;version=565&amp;cstk=0ZgL6G-0" alt="image"></p>
+<p><img src="/images/chrome-percent.png" alt="image"></p>
 <p>好像也是目标的效果。</p>
 <ul>
 <li>再来看看IE8下面的表现</li>
 </ul>
-<p><img src="https://note.youdao.com/yws/api/personal/sync?method=download&amp;fileId=WEB4557bf13b69776e518d3dd90fdb23f66&amp;version=566&amp;cstk=0ZgL6G-0" alt="image"><br><img src="https://note.youdao.com/yws/api/personal/sync?method=download&amp;fileId=WEB0d8ff7d4f009a57fb0029b4bb0ad18ed&amp;version=567&amp;cstk=0ZgL6G-0" alt="image"></p>
+<p><img src="/images/ie-fixed.png" alt="image"><br><img src="/images/ie-percent.png" alt="image"></p>
 <p>完美兼容IE8，但是在IE7下面就会有问题了。</p>
 
       
