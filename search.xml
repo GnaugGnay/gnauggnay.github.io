@@ -1,49 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
-  
-    
-    <entry>
-      <title><![CDATA[仿安卓系统按钮点击的水波纹效果]]></title>
-      <url>%2F2017%2F07%2F26%2F%E4%BB%BF%E5%AE%89%E5%8D%93%E7%B3%BB%E7%BB%9F%E6%8C%89%E9%92%AE%E7%82%B9%E5%87%BB%E7%9A%84%E6%B0%B4%E6%B3%A2%E7%BA%B9%E6%95%88%E6%9E%9C%2F</url>
-      <content type="text"><![CDATA[安卓原生的很多按钮组件点击都有那种水波涟漪的效果，觉得还不错，便试着实现了一下。核心就是在div的上方append一个position:absolute的圆，并从宽高为0到宽高等于div的对角线长度。以下html结构只适用于透明背景的div，如果想要背景色的话需要进行一些微调。上代码。 tips:以下代码基于jQuery html: &lt;div class="main-container"&gt; &lt;div class="js-android-click" onselectstart='return false'&gt; ButtonButtonButtonButton &lt;/div&gt;&lt;/div&gt; css: html, body &#123; height: 100%; margin: 0;&#125;.main-container &#123; position: relative; height: 100%; text-align: center; padding-top: 100px;&#125;.circle &#123; position: absolute; background-color: #ccc; opacity: .5; border-radius: 50%; z-index: -99;&#125;.js-android-click &#123; padding: 20px 30px; display: inline-block; position: relative; border: 1px solid #000; overflow: hidden; cursor: pointer;&#125; $('.js-android-click').on('click', function (e) &#123; // 计算容器div的对角线长度，以此作为圆的半径 var width = $(this).innerWidth(); var height = $(this).innerHeight(); var radius = Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2)); //初始化效果元素 var $circle = $('&lt;div class="circle"&gt;&lt;/div&gt;'); $circle.css(_getTopLeft(e.offsetY, e.offsetX, 0, 0)); $(this).append($circle); $circle.css(&#123; width: 0, height: 0 &#125;).animate(&#123; width: radius * 2, //保证能覆盖整个div height: radius * 2 &#125;, &#123; duration: 300, easing: 'linear', step: function(now) &#123; $(this).css(_getTopLeft(e.offsetY, e.offsetX, now, now)); &#125;, done: function () &#123; $(this).remove(); &#125; &#125;);&#125;);//这里用到了position:absolute定位，为了使圆能够固定中心变大，需要计算top,left值function _getTopLeft(centerX, centerY, width, height) &#123; return &#123; top: centerX - width / 2, left: centerY - width / 2 &#125;&#125;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[使用table-cell来完成水平垂直居中]]></title>
-      <url>%2F2017%2F05%2F31%2F%E4%BD%BF%E7%94%A8table-cell%E6%9D%A5%E5%AE%8C%E6%88%90%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%2F</url>
-      <content type="text"><![CDATA[水平垂直居中是一个老生常谈的问题了，使用flexbox可以很完美地实现但是有兼容性的问题，使用position:absolute的话要求内容的宽高是固定的，不然的话还是需要使用到transform,这样的话还是有兼容性的问题。 如果是移动端的话建议还是直接使用flexbox来完成垂直居中的效果，所以这里就说说在PC端的实现,直接上代码。 css部分: .container &#123;display: table-cell;text-align: center; vertical-align: middle; width: 300px;height: 300px;background-color: #eee;&#125;.child &#123;display: inline-block; width: 100px;height:100px;background-color: #ddd; &#125; html部分: &lt;body&gt; &lt;div class="container"&gt; &lt;div class="child"&gt; &lt;/div&gt; &lt;/div&gt;&lt;/body&gt; chrome下效果 那如果子容器宽高是百分比呢？改写css .child &#123;display: inline-block; width: 50%;height:50%;background-color: #ddd; &#125; chrome下效果 好像也是目标的效果。 再来看看IE8下面的表现 完美兼容IE8，但是在IE7下面就会有问题了。]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[将一个String和多个String值进行比较]]></title>
-      <url>%2F2017%2F02%2F22%2F%E5%B0%86%E4%B8%80%E4%B8%AAString%E5%92%8C%E5%A4%9A%E4%B8%AAString%E5%80%BC%E8%BF%9B%E8%A1%8C%E6%AF%94%E8%BE%83%2F</url>
-      <content type="text"><![CDATA[我们经常需要将一个String和多个String值进行比较。最初的反应是使用||符号连接多个===完成，比如： if (string === 'banana' || string === 'pineapple' || string === 'mongo' || string === 'lemon') &#123; fruitColor = 'yellow';&#125; Switchswitch(string) &#123; case 'banana': case 'pineapple': case 'mongo': case 'lemon': fruitColor = 'yellow';&#125; Arrayif (['banana', 'pineapple', 'mongo', 'lemon'].indexOf(string) &gt;= 0) &#123; fruitColor = 'yellow';&#125; JQueryif($.inArray(str, ['Apple', 'Orange', 'Grapes', 'Pear']) &gt;= 0)&#123; fruitColor = 'yellow';&#125; 正则表达式if (/^(banana|pineapple|mongo|lemon)$/.test(string)) &#123; fruitColor = 'yellow';&#125;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[一些没用的JS技巧(手动滑稽)]]></title>
-      <url>%2F2017%2F02%2F21%2F%E4%B8%80%E4%BA%9B%E6%B2%A1%E7%94%A8%E7%9A%84JS%E6%8A%80%E5%B7%A7-%E6%89%8B%E5%8A%A8%E6%BB%91%E7%A8%BD%2F</url>
-      <content type="text"><![CDATA[快速打印一个五分制的评分情况function getRating(rating) &#123; if(rating &gt; 5 || rating &lt; 0) throw new Error('数字不在范围内'); return '★★★★★☆☆☆☆☆'.substring(5 - rating, 10 - rating );&#125; 输出 n 个”abc”拼接的字符串,abc可换成其他，原理是把数组各个空的元素用’abc’来分隔var str = new Array(n+1).join('abc'); 数字补0，例如：56 =&gt; 0056 (format(56, 4))function format(n, length) &#123; return (Array(length).join('0') + n).substr(-length);&#125; 条件判断var sb = true; //普通方式 if (sb) { alert('You are sb!'); } else { alert('You are not sb!'); } //二逼青年专用方式 sb &amp;&amp; alert('You are sb!'); sb || alert('You are not sb!'); a||b :只有在a为fasle或者返回false时才会执行b,当a为true 时,直接返回a,后面的b不会执行a&amp;&amp;b :只有在a为true 或者返回true 时才会执行b,当a为false时,直接返回a,后面的b不会执行]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[JS判断滚动条向上还是向下]]></title>
-      <url>%2F2017%2F02%2F20%2FJS%E5%88%A4%E6%96%AD%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%90%91%E4%B8%8A%E8%BF%98%E6%98%AF%E5%90%91%E4%B8%8B%2F</url>
-      <content type="text"><![CDATA[scroll(function(direction) &#123; console.log(direction) &#125;); function scroll( fn ) &#123; var beforeScrollTop = document.body.scrollTop; var fn = fn || function() &#123;&#125;; window.addEventListener("scroll", function() &#123; var afterScrollTop = document.body.scrollTop; var delta = afterScrollTop - beforeScrollTop; if( delta === 0 ) return false; fn( delta &gt; 0 ? "down" : "up" ); beforeScrollTop = afterScrollTop; &#125;, false);&#125;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[${标签}：${换行文字}简单实现]]></title>
-      <url>%2F2017%2F02%2F20%2F%24%7B%E6%A0%87%E7%AD%BE%7D%EF%BC%9A%24%7B%E6%8D%A2%E8%A1%8C%E6%96%87%E5%AD%97%7D%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%2F</url>
-      <content type="text"><![CDATA[web开发的很多时候需要实现下面这样的效果 地址：广东省广州市天河区天河北路900号高科大厦XXXXXXX XXXXXX 比较简单的办法可以像下面这样，利用table &lt;div style="display:table"&gt; &lt;p style="display:table-cell;white-space:nowrap;"&gt;地址：&lt;/p&gt; &lt;p style="display:table-cell;"&gt;广东省广州市天河区天河北路900号高科大厦XXXXXXXXXXXXX&lt;/p&gt;&lt;/div&gt; 使用scss的情况 html: &lt;div class="label-text"&gt; &lt;p class="text-no-wrap"&gt;地址：&lt;/p&gt; &lt;p&gt;广东省广州市天河区天河北路900号高科大厦XXXXXXXXXXXXX&lt;/p&gt;&lt;/div&gt; scss: .label-text &#123; display: table; &gt; div,p,span &#123; display: table-cell; &#125; .text-no-wrap &#123; white-space: nowrap; &#125;&#125;]]></content>
-    </entry>
-
-    
-  
-  
+  <entry>
+    <title><![CDATA[数组求和之告别for循环]]></title>
+    <url>%2F2017%2F09%2F12%2F%E6%95%B0%E7%BB%84%E6%B1%82%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[简单数组求和let arr = [1, 2, 3, 4, 5];let sum = Math.max.apply(null, arr); console.log(sum); // 15 对象数组let objArr = [ &#123; value: 1, name: 'first' &#125;, &#123; value: 2, name: 'second' &#125;, &#123; value: 3, name: 'third' &#125;, &#123; value: 4, name: 'forth' &#125;, &#123; value: 5, name: 'fifth' &#125;,]let sum = objArr.reduce((prev, next) =&gt; &#123; return prev + next.value;&#125;, 0);console.log(sum); // 15]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[仿安卓系统按钮点击的水波纹效果]]></title>
+    <url>%2F2017%2F07%2F26%2F%E4%BB%BF%E5%AE%89%E5%8D%93%E7%B3%BB%E7%BB%9F%E6%8C%89%E9%92%AE%E7%82%B9%E5%87%BB%E7%9A%84%E6%B0%B4%E6%B3%A2%E7%BA%B9%E6%95%88%E6%9E%9C%2F</url>
+    <content type="text"><![CDATA[安卓原生的很多按钮组件点击都有那种水波涟漪的效果，觉得还不错，便试着实现了一下。核心就是在div的上方append一个position:absolute的圆，并从宽高为0到宽高等于div的对角线长度。以下html结构只适用于透明背景的div，如果想要背景色的话需要进行一些微调。上代码。 tips:以下代码基于jQuery html: &lt;div class="main-container"&gt; &lt;div class="js-android-click" onselectstart='return false'&gt; ButtonButtonButtonButton &lt;/div&gt;&lt;/div&gt; css: html, body &#123; height: 100%; margin: 0;&#125;.main-container &#123; position: relative; height: 100%; text-align: center; padding-top: 100px;&#125;.circle &#123; position: absolute; background-color: #ccc; opacity: .5; border-radius: 50%; z-index: -99;&#125;.js-android-click &#123; padding: 20px 30px; display: inline-block; position: relative; border: 1px solid #000; overflow: hidden; cursor: pointer;&#125; $('.js-android-click').on('click', function (e) &#123; // 计算容器div的对角线长度，以此作为圆的半径 var width = $(this).innerWidth(); var height = $(this).innerHeight(); var radius = Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2)); //初始化效果元素 var $circle = $('&lt;div class="circle"&gt;&lt;/div&gt;'); $circle.css(_getTopLeft(e.offsetY, e.offsetX, 0, 0)); $(this).append($circle); $circle.css(&#123; width: 0, height: 0 &#125;).animate(&#123; width: radius * 2, //保证能覆盖整个div height: radius * 2 &#125;, &#123; duration: 300, easing: 'linear', step: function(now) &#123; $(this).css(_getTopLeft(e.offsetY, e.offsetX, now, now)); &#125;, done: function () &#123; $(this).remove(); &#125; &#125;);&#125;);//这里用到了position:absolute定位，为了使圆能够固定中心变大，需要计算top,left值function _getTopLeft(centerX, centerY, width, height) &#123; return &#123; top: centerX - width / 2, left: centerY - width / 2 &#125;&#125;]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用table-cell来完成水平垂直居中]]></title>
+    <url>%2F2017%2F05%2F31%2F%E4%BD%BF%E7%94%A8table-cell%E6%9D%A5%E5%AE%8C%E6%88%90%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%2F</url>
+    <content type="text"><![CDATA[水平垂直居中是一个老生常谈的问题了，使用flexbox可以很完美地实现但是有兼容性的问题，使用position:absolute的话要求内容的宽高是固定的，不然的话还是需要使用到transform,这样的话还是有兼容性的问题。 如果是移动端的话建议还是直接使用flexbox来完成垂直居中的效果，所以这里就说说在PC端的实现,直接上代码。 css部分: .container &#123;display: table-cell;text-align: center; vertical-align: middle; width: 300px;height: 300px;background-color: #eee;&#125;.child &#123;display: inline-block; width: 100px;height:100px;background-color: #ddd; &#125; html部分: &lt;body&gt; &lt;div class="container"&gt; &lt;div class="child"&gt; &lt;/div&gt; &lt;/div&gt;&lt;/body&gt; chrome下效果 那如果子容器宽高是百分比呢？改写css .child &#123;display: inline-block; width: 50%;height:50%;background-color: #ddd; &#125; chrome下效果 好像也是目标的效果。 再来看看IE8下面的表现 完美兼容IE8，但是在IE7下面就会有问题了。]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[将一个String和多个String值进行比较]]></title>
+    <url>%2F2017%2F02%2F22%2F%E5%B0%86%E4%B8%80%E4%B8%AAString%E5%92%8C%E5%A4%9A%E4%B8%AAString%E5%80%BC%E8%BF%9B%E8%A1%8C%E6%AF%94%E8%BE%83%2F</url>
+    <content type="text"><![CDATA[我们经常需要将一个String和多个String值进行比较。最初的反应是使用||符号连接多个===完成，比如： if (string === 'banana' || string === 'pineapple' || string === 'mongo' || string === 'lemon') &#123; fruitColor = 'yellow';&#125; Switchswitch(string) &#123; case 'banana': case 'pineapple': case 'mongo': case 'lemon': fruitColor = 'yellow';&#125; Arrayif (['banana', 'pineapple', 'mongo', 'lemon'].indexOf(string) &gt;= 0) &#123; fruitColor = 'yellow';&#125; JQueryif($.inArray(str, ['Apple', 'Orange', 'Grapes', 'Pear']) &gt;= 0)&#123; fruitColor = 'yellow';&#125; 正则表达式if (/^(banana|pineapple|mongo|lemon)$/.test(string)) &#123; fruitColor = 'yellow';&#125;]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>奇技淫巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[一些没用的JS技巧(手动滑稽)]]></title>
+    <url>%2F2017%2F02%2F21%2F%E4%B8%80%E4%BA%9B%E6%B2%A1%E7%94%A8%E7%9A%84JS%E6%8A%80%E5%B7%A7-%E6%89%8B%E5%8A%A8%E6%BB%91%E7%A8%BD%2F</url>
+    <content type="text"><![CDATA[快速打印一个五分制的评分情况function getRating(rating) &#123; if(rating &gt; 5 || rating &lt; 0) throw new Error('数字不在范围内'); return '★★★★★☆☆☆☆☆'.substring(5 - rating, 10 - rating );&#125; 输出 n 个”abc”拼接的字符串,abc可换成其他，原理是把数组各个空的元素用’abc’来分隔var str = new Array(n+1).join('abc'); 数字补0，例如：56 =&gt; 0056 (format(56, 4))function format(n, length) &#123; return (Array(length).join('0') + n).substr(-length);&#125; 条件判断var sb = true; //普通方式 if (sb) { alert('You are sb!'); } else { alert('You are not sb!'); } //二逼青年专用方式 sb &amp;&amp; alert('You are sb!'); sb || alert('You are not sb!'); a||b :只有在a为fasle或者返回false时才会执行b,当a为true 时,直接返回a,后面的b不会执行a&amp;&amp;b :只有在a为true 或者返回true 时才会执行b,当a为false时,直接返回a,后面的b不会执行]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>奇技淫巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS判断滚动条向上还是向下]]></title>
+    <url>%2F2017%2F02%2F20%2FJS%E5%88%A4%E6%96%AD%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%90%91%E4%B8%8A%E8%BF%98%E6%98%AF%E5%90%91%E4%B8%8B%2F</url>
+    <content type="text"><![CDATA[scroll(function(direction) &#123; console.log(direction) &#125;); function scroll( fn ) &#123; var beforeScrollTop = document.body.scrollTop; var fn = fn || function() &#123;&#125;; window.addEventListener("scroll", function() &#123; var afterScrollTop = document.body.scrollTop; var delta = afterScrollTop - beforeScrollTop; if( delta === 0 ) return false; fn( delta &gt; 0 ? "down" : "up" ); beforeScrollTop = afterScrollTop; &#125;, false);&#125;]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[${标签}：${换行文字}简单实现]]></title>
+    <url>%2F2017%2F02%2F20%2F%24%7B%E6%A0%87%E7%AD%BE%7D%EF%BC%9A%24%7B%E6%8D%A2%E8%A1%8C%E6%96%87%E5%AD%97%7D%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[web开发的很多时候需要实现下面这样的效果 地址：广东省广州市天河区天河北路900号高科大厦XXXXXXX XXXXXX 比较简单的办法可以像下面这样，利用table &lt;div style="display:table"&gt; &lt;p style="display:table-cell;white-space:nowrap;"&gt;地址：&lt;/p&gt; &lt;p style="display:table-cell;"&gt;广东省广州市天河区天河北路900号高科大厦XXXXXXXXXXXXX&lt;/p&gt;&lt;/div&gt; 使用scss的情况 html: &lt;div class="label-text"&gt; &lt;p class="text-no-wrap"&gt;地址：&lt;/p&gt; &lt;p&gt;广东省广州市天河区天河北路900号高科大厦XXXXXXXXXXXXX&lt;/p&gt;&lt;/div&gt; scss: .label-text &#123; display: table; &gt; div,p,span &#123; display: table-cell; &#125; .text-no-wrap &#123; white-space: nowrap; &#125;&#125;]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
 </search>

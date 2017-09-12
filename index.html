@@ -89,12 +89,13 @@
 
 <meta name="description" content="We work in dark,to serve the light.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="GnaugGnay's notes">
+<meta property="og:title" content="GnaugGnay&#39;s notes">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="GnaugGnay's notes">
+<meta property="og:site_name" content="GnaugGnay&#39;s notes">
 <meta property="og:description" content="We work in dark,to serve the light.">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GnaugGnay's notes">
+<meta name="twitter:title" content="GnaugGnay&#39;s notes">
 <meta name="twitter:description" content="We work in dark,to serve the light.">
 
 
@@ -281,6 +282,149 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/12/数组求和/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="GnaugGnay">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="GnaugGnay's notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="GnaugGnay's notes" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/12/数组求和/" itemprop="url">
+                  数组求和之告别for循环
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-12T15:15:22+08:00">
+                2017-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="简单数组求和"><a href="#简单数组求和" class="headerlink" title="简单数组求和"></a>简单数组求和</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</div><div class="line"></div><div class="line"><span class="keyword">let</span> sum = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr);        </div><div class="line"><span class="built_in">console</span>.log(sum);       <span class="comment">// 15</span></div></pre></td></tr></table></figure>
+<h3 id="对象数组"><a href="#对象数组" class="headerlink" title="对象数组"></a>对象数组</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> objArr = [</div><div class="line">    &#123;</div><div class="line">        value: <span class="number">1</span>,</div><div class="line">        name: <span class="string">'first'</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        value: <span class="number">2</span>,</div><div class="line">        name: <span class="string">'second'</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        value: <span class="number">3</span>,</div><div class="line">        name: <span class="string">'third'</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        value: <span class="number">4</span>,</div><div class="line">        name: <span class="string">'forth'</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        value: <span class="number">5</span>,</div><div class="line">        name: <span class="string">'fifth'</span></div><div class="line">    &#125;,</div><div class="line">]</div><div class="line"></div><div class="line"><span class="keyword">let</span> sum = objArr.reduce(<span class="function">(<span class="params">prev, next</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> prev + next.value;</div><div class="line">&#125;, <span class="number">0</span>);</div><div class="line"><span class="built_in">console</span>.log(sum);       <span class="comment">// 15</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -1218,7 +1362,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

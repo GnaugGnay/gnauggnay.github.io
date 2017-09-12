@@ -87,25 +87,18 @@
 
 
 
-<meta name="description" content="安卓原生的很多按钮组件点击都有那种水波涟漪的效果，觉得还不错，便试着实现了一下。核心就是在div的上方append一个position:absolute的圆，并从宽高为0到宽高等于div的对角线长度。以下html结构只适用于透明背景的div，如果想要背景色的话需要进行一些微调。上代码。
-tips:以下代码基于jQuery
-html:
-&amp;lt;div class=&quot;main-container&quot;&amp;g">
+<meta name="description" content="安卓原生的很多按钮组件点击都有那种水波涟漪的效果，觉得还不错，便试着实现了一下。核心就是在div的上方append一个position:absolute的圆，并从宽高为0到宽高等于div的对角线长度。以下html结构只适用于透明背景的div，如果想要背景色的话需要进行一些微调。上代码。 tips:以下代码基于jQuery html: &amp;lt;div class=&quot;main-container&quot;&amp;g">
+<meta name="keywords" content="html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="仿安卓系统按钮点击的水波纹效果">
 <meta property="og:url" content="http://yoursite.com/2017/07/26/仿安卓系统按钮点击的水波纹效果/index.html">
-<meta property="og:site_name" content="GnaugGnay's notes">
-<meta property="og:description" content="安卓原生的很多按钮组件点击都有那种水波涟漪的效果，觉得还不错，便试着实现了一下。核心就是在div的上方append一个position:absolute的圆，并从宽高为0到宽高等于div的对角线长度。以下html结构只适用于透明背景的div，如果想要背景色的话需要进行一些微调。上代码。
-tips:以下代码基于jQuery
-html:
-&amp;lt;div class=&quot;main-container&quot;&amp;g">
-<meta property="og:updated_time" content="2017-07-26T06:48:48.297Z">
+<meta property="og:site_name" content="GnaugGnay&#39;s notes">
+<meta property="og:description" content="安卓原生的很多按钮组件点击都有那种水波涟漪的效果，觉得还不错，便试着实现了一下。核心就是在div的上方append一个position:absolute的圆，并从宽高为0到宽高等于div的对角线长度。以下html结构只适用于透明背景的div，如果想要背景色的话需要进行一些微调。上代码。 tips:以下代码基于jQuery html: &amp;lt;div class=&quot;main-container&quot;&amp;g">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-07-26T06:48:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="仿安卓系统按钮点击的水波纹效果">
-<meta name="twitter:description" content="安卓原生的很多按钮组件点击都有那种水波涟漪的效果，觉得还不错，便试着实现了一下。核心就是在div的上方append一个position:absolute的圆，并从宽高为0到宽高等于div的对角线长度。以下html结构只适用于透明背景的div，如果想要背景色的话需要进行一些微调。上代码。
-tips:以下代码基于jQuery
-html:
-&amp;lt;div class=&quot;main-container&quot;&amp;g">
+<meta name="twitter:description" content="安卓原生的很多按钮组件点击都有那种水波涟漪的效果，觉得还不错，便试着实现了一下。核心就是在div的上方append一个position:absolute的圆，并从宽高为0到宽高等于div的对角线长度。以下html结构只适用于透明背景的div，如果想要背景色的话需要进行一些微调。上代码。 tips:以下代码基于jQuery html: &amp;lt;div class=&quot;main-container&quot;&amp;g">
 
 
 
@@ -403,7 +396,7 @@ html:
 <a id="more"></a>
 <p>css:</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123;</div><div class="line">	<span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.main-container</span> &#123;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">padding-top</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.circle</span> &#123;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#ccc</span>;</div><div class="line">    <span class="attribute">opacity</span>: .<span class="number">5</span>;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">z-index</span>: -<span class="number">99</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.js-android-click</span> &#123;</div><div class="line">	<span class="attribute">padding</span>: <span class="number">20px</span> <span class="number">30px</span>;</div><div class="line">	<span class="attribute">display</span>: inline-block;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">    <span class="attribute">overflow</span>: hidden;</div><div class="line">    <span class="attribute">cursor</span>: pointer;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">$(<span class="string">'.js-android-click'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="comment">// 计算容器div的对角线长度，以此作为圆的半径</span></div><div class="line">	<span class="keyword">var</span> width = $(<span class="keyword">this</span>).innerWidth();</div><div class="line">	<span class="keyword">var</span> height = $(<span class="keyword">this</span>).innerHeight();</div><div class="line">	<span class="keyword">var</span> radius = <span class="built_in">Math</span>.sqrt(<span class="built_in">Math</span>.pow(width, <span class="number">2</span>) + <span class="built_in">Math</span>.pow(height, <span class="number">2</span>));</div><div class="line"></div><div class="line">    <span class="comment">//初始化效果元素</span></div><div class="line">	<span class="keyword">var</span> $circle = $(<span class="string">'&lt;div class="circle"&gt;&lt;/div&gt;'</span>);</div><div class="line">	$circle.css(_getTopLeft(e.offsetY, e.offsetX, <span class="number">0</span>, <span class="number">0</span>));</div><div class="line">	$(<span class="keyword">this</span>).append($circle);</div><div class="line"></div><div class="line">	$circle.css(&#123;</div><div class="line">	    <span class="attr">width</span>: <span class="number">0</span>,</div><div class="line">	    <span class="attr">height</span>: <span class="number">0</span></div><div class="line">	&#125;).animate(&#123;</div><div class="line">	    <span class="attr">width</span>: radius * <span class="number">2</span>,     <span class="comment">//保证能覆盖整个div</span></div><div class="line">	    height: radius * <span class="number">2</span></div><div class="line">	&#125;, &#123;</div><div class="line">	    <span class="attr">duration</span>: <span class="number">300</span>,</div><div class="line">	    <span class="attr">easing</span>: <span class="string">'linear'</span>,</div><div class="line">	    <span class="attr">step</span>: <span class="function"><span class="keyword">function</span>(<span class="params">now</span>) </span>&#123;</div><div class="line">	    	$(<span class="keyword">this</span>).css(_getTopLeft(e.offsetY, e.offsetX, now, now));</div><div class="line">	    &#125;,</div><div class="line">	    <span class="attr">done</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	    	$(<span class="keyword">this</span>).remove();</div><div class="line">	    &#125;</div><div class="line">	&#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//这里用到了position:absolute定位，为了使圆能够固定中心变大，需要计算top,left值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">_getTopLeft</span>(<span class="params">centerX, centerY, width, height</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">top</span>: centerX - width / <span class="number">2</span>,</div><div class="line">        <span class="attr">left</span>: centerY - width / <span class="number">2</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">$(<span class="string">'.js-android-click'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="comment">// 计算容器div的对角线长度，以此作为圆的半径</span></div><div class="line">	<span class="keyword">var</span> width = $(<span class="keyword">this</span>).innerWidth();</div><div class="line">	<span class="keyword">var</span> height = $(<span class="keyword">this</span>).innerHeight();</div><div class="line">	<span class="keyword">var</span> radius = <span class="built_in">Math</span>.sqrt(<span class="built_in">Math</span>.pow(width, <span class="number">2</span>) + <span class="built_in">Math</span>.pow(height, <span class="number">2</span>));</div><div class="line"></div><div class="line">    <span class="comment">//初始化效果元素</span></div><div class="line">	<span class="keyword">var</span> $circle = $(<span class="string">'&lt;div class="circle"&gt;&lt;/div&gt;'</span>);</div><div class="line">	$circle.css(_getTopLeft(e.offsetY, e.offsetX, <span class="number">0</span>, <span class="number">0</span>));</div><div class="line">	$(<span class="keyword">this</span>).append($circle);</div><div class="line"></div><div class="line">	$circle.css(&#123;</div><div class="line">	    width: <span class="number">0</span>,</div><div class="line">	    height: <span class="number">0</span></div><div class="line">	&#125;).animate(&#123;</div><div class="line">	    width: radius * <span class="number">2</span>,     <span class="comment">//保证能覆盖整个div</span></div><div class="line">	    height: radius * <span class="number">2</span></div><div class="line">	&#125;, &#123;</div><div class="line">	    duration: <span class="number">300</span>,</div><div class="line">	    easing: <span class="string">'linear'</span>,</div><div class="line">	    step: <span class="function"><span class="keyword">function</span>(<span class="params">now</span>) </span>&#123;</div><div class="line">	    	$(<span class="keyword">this</span>).css(_getTopLeft(e.offsetY, e.offsetX, now, now));</div><div class="line">	    &#125;,</div><div class="line">	    done: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	    	$(<span class="keyword">this</span>).remove();</div><div class="line">	    &#125;</div><div class="line">	&#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//这里用到了position:absolute定位，为了使圆能够固定中心变大，需要计算top,left值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">_getTopLeft</span>(<span class="params">centerX, centerY, width, height</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        top: centerX - width / <span class="number">2</span>,</div><div class="line">        left: centerY - width / <span class="number">2</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -449,6 +442,10 @@ html:
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/12/数组求和/" rel="prev" title="数组求和之告别for循环">
+                数组求和之告别for循环 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -511,7 +508,7 @@ html:
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
