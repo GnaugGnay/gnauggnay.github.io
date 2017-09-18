@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[最简洁的数组去重]]></title>
+    <url>%2F2017%2F09%2F18%2F%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%2F</url>
+    <content type="text"><![CDATA[数组去重也是面试中经常会使用到的点，在这就简单说下简洁的方法 ES6： [...new Set([1, 2, 3, 2, 'b', 1, 'b'])] ES5： [1, 2, 3, 2, 'b', 1, 'b'].filter(function (ele, index, array) &#123; return index === array.indexOf(ele)&#125;); 不支持filter函数（或使用polyfill）：//数组去重function toUniqueArray(arr) &#123; var result = []; var json = &#123;&#125;; for (var i = 0; i &lt; arr.length; i++) &#123; if (!json[arr[i]]) &#123; result.push(arr[i]); json[arr[i]] = 1; &#125; &#125; return result;&#125;toUniqueArray([1, 2, 3, 2, 'b', 1, 'b']);]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数组求和之告别for循环]]></title>
     <url>%2F2017%2F09%2F12%2F%E6%95%B0%E7%BB%84%E6%B1%82%E5%92%8C%2F</url>
     <content type="text"><![CDATA[简单数组求和let arr = [1, 2, 3, 4, 5];let sum = Math.max.apply(null, arr); console.log(sum); // 15 对象数组let objArr = [ &#123; value: 1, name: 'first' &#125;, &#123; value: 2, name: 'second' &#125;, &#123; value: 3, name: 'third' &#125;, &#123; value: 4, name: 'forth' &#125;, &#123; value: 5, name: 'fifth' &#125;,]let sum = objArr.reduce((prev, next) =&gt; &#123; return prev + next.value;&#125;, 0);console.log(sum); // 15]]></content>
