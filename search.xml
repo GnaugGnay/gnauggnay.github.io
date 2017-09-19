@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[数组求和之告别for循环]]></title>
     <url>%2F2017%2F09%2F12%2F%E6%95%B0%E7%BB%84%E6%B1%82%E5%92%8C%2F</url>
-    <content type="text"><![CDATA[简单数组求和let arr = [1, 2, 3, 4, 5];let sum = Math.max.apply(null, arr); console.log(sum); // 15 对象数组let objArr = [ &#123; value: 1, name: 'first' &#125;, &#123; value: 2, name: 'second' &#125;, &#123; value: 3, name: 'third' &#125;, &#123; value: 4, name: 'forth' &#125;, &#123; value: 5, name: 'fifth' &#125;,]let sum = objArr.reduce((prev, next) =&gt; &#123; return prev + next.value;&#125;, 0);console.log(sum); // 15]]></content>
+    <content type="text"><![CDATA[简单数组求和let arr = [1, 2, 3, 4, 5];let sum = arr.reduce((prev, next) =&gt; &#123; return prev + next;&#125;, 0); //这个0可加可不加 console.log(sum); // 15 对象数组let objArr = [ &#123; value: 1, name: 'first' &#125;, &#123; value: 2, name: 'second' &#125;, &#123; value: 3, name: 'third' &#125;, &#123; value: 4, name: 'forth' &#125;, &#123; value: 5, name: 'fifth' &#125;,]let sum = objArr.reduce((prev, next) =&gt; &#123; return prev + next.value;&#125;, 0); //必须加0，不然得在函数里作判断console.log(sum); // 15]]></content>
       <categories>
         <category>js</category>
       </categories>
