@@ -292,6 +292,151 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/N个数组取交集/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="GnaugGnay">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="GnaugGnay's notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="GnaugGnay's notes" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/12/04/N个数组取交集/" itemprop="url">
+                  N个数组取交集
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T17:39:57+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>用的是递归的思路，时间复杂度感觉比较高。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> a = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'5'</span>];</div><div class="line"><span class="keyword">let</span> b = [<span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'5'</span>];</div><div class="line"><span class="keyword">let</span> c = [<span class="string">'4'</span>, <span class="string">'5'</span>,<span class="string">'2'</span>];</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(getCommon(a, b, c));	<span class="comment">// ['2', '5']</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCommon</span>(<span class="params">arrA, arrB, ...others</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span> (others.length == <span class="number">0</span>) &#123;</div><div class="line">		<span class="keyword">return</span> _two(arrA, arrB);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">return</span> getCommon(_two(arrA, arrB), ...others)</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// 两个数组取交集</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">_two</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> a.filter(<span class="function"><span class="params">el</span> =&gt;</span> b.includes(el));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果用全数组混合累计数组项出现次数的方法，只需要一次遍历。（代码难看不喜欢（手动滑稽））</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/配合Vue制作滑块组件/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1661,7 +1806,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

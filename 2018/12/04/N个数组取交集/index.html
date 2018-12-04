@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="数组去重也是面试中经常会使用到的点，在这就简单说下简洁的方法 ES6： [...new Set([1, 2, 3, 2, &apos;b&apos;, 1, &apos;b&apos;])] ES5： [1, 2, 3, 2, &apos;b&apos;, 1, &apos;b&apos;].filter(function (ele, index, array) &amp;#123;    return index === array.indexOf(ele)&amp;#125;); 不支持">
+<meta name="description" content="用的是递归的思路，时间复杂度感觉比较高。 let a = [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;5&apos;];let b = [&apos;2&apos;, &apos;3&apos;, &apos;5&apos;];let c = [&apos;4&apos;, &apos;5&apos;,&apos;2&apos;];console.log(getCommon(a, b, c));	// [&apos;2&apos;, &apos;5&apos;]function getCommon(arrA, arrB, ...others) &amp;#123;	if (othe">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最简洁的数组去重">
-<meta property="og:url" content="http://yoursite.com/2017/09/18/数组去重/index.html">
+<meta property="og:title" content="N个数组取交集">
+<meta property="og:url" content="http://yoursite.com/2018/12/04/N个数组取交集/index.html">
 <meta property="og:site_name" content="GnaugGnay&#39;s notes">
-<meta property="og:description" content="数组去重也是面试中经常会使用到的点，在这就简单说下简洁的方法 ES6： [...new Set([1, 2, 3, 2, &apos;b&apos;, 1, &apos;b&apos;])] ES5： [1, 2, 3, 2, &apos;b&apos;, 1, &apos;b&apos;].filter(function (ele, index, array) &amp;#123;    return index === array.indexOf(ele)&amp;#125;); 不支持">
+<meta property="og:description" content="用的是递归的思路，时间复杂度感觉比较高。 let a = [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;5&apos;];let b = [&apos;2&apos;, &apos;3&apos;, &apos;5&apos;];let c = [&apos;4&apos;, &apos;5&apos;,&apos;2&apos;];console.log(getCommon(a, b, c));	// [&apos;2&apos;, &apos;5&apos;]function getCommon(arrA, arrB, ...others) &amp;#123;	if (othe">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-18T02:36:32.488Z">
+<meta property="og:updated_time" content="2018-12-04T09:43:00.102Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最简洁的数组去重">
-<meta name="twitter:description" content="数组去重也是面试中经常会使用到的点，在这就简单说下简洁的方法 ES6： [...new Set([1, 2, 3, 2, &apos;b&apos;, 1, &apos;b&apos;])] ES5： [1, 2, 3, 2, &apos;b&apos;, 1, &apos;b&apos;].filter(function (ele, index, array) &amp;#123;    return index === array.indexOf(ele)&amp;#125;); 不支持">
+<meta name="twitter:title" content="N个数组取交集">
+<meta name="twitter:description" content="用的是递归的思路，时间复杂度感觉比较高。 let a = [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;5&apos;];let b = [&apos;2&apos;, &apos;3&apos;, &apos;5&apos;];let c = [&apos;4&apos;, &apos;5&apos;,&apos;2&apos;];console.log(getCommon(a, b, c));	// [&apos;2&apos;, &apos;5&apos;]function getCommon(arrA, arrB, ...others) &amp;#123;	if (othe">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/18/数组去重/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/04/N个数组取交集/"/>
 
 
 
 
 
-  <title> 最简洁的数组去重 | GnaugGnay's notes </title>
+  <title> N个数组取交集 | GnaugGnay's notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -292,7 +292,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/18/数组去重/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/N个数组取交集/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="GnaugGnay">
@@ -316,7 +316,7 @@
             
             
               
-                最简洁的数组去重
+                N个数组取交集
               
             
           </h1>
@@ -331,8 +331,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-18T10:29:17+08:00">
-                2017-09-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T17:39:57+08:00">
+                2018-12-04
               </time>
             
 
@@ -389,12 +389,9 @@
       
 
       
-        <p>数组去重也是面试中经常会使用到的点，在这就简单说下简洁的方法</p>
-<p>ES6：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[...new <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="string">'b'</span>, <span class="number">1</span>, <span class="string">'b'</span>])]</div></pre></td></tr></table></figure>
-<p>ES5：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="string">'b'</span>, <span class="number">1</span>, <span class="string">'b'</span>].filter(<span class="function"><span class="keyword">function</span> (<span class="params">ele, index, array</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> index === array.indexOf(ele)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>不支持filter函数（或使用polyfill）：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//数组去重</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">toUniqueArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line">    <span class="keyword">var</span> json = &#123;&#125;;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (!json[arr[i]]) &#123;</div><div class="line">            result.push(arr[i]);</div><div class="line">            json[arr[i]] = <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line">toUniqueArray([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="string">'b'</span>, <span class="number">1</span>, <span class="string">'b'</span>]);</div></pre></td></tr></table></figure></p>
+        <p>用的是递归的思路，时间复杂度感觉比较高。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> a = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'5'</span>];</div><div class="line"><span class="keyword">let</span> b = [<span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'5'</span>];</div><div class="line"><span class="keyword">let</span> c = [<span class="string">'4'</span>, <span class="string">'5'</span>,<span class="string">'2'</span>];</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(getCommon(a, b, c));	<span class="comment">// ['2', '5']</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCommon</span>(<span class="params">arrA, arrB, ...others</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span> (others.length == <span class="number">0</span>) &#123;</div><div class="line">		<span class="keyword">return</span> _two(arrA, arrB);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">return</span> getCommon(_two(arrA, arrB), ...others)</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// 两个数组取交集</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">_two</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> a.filter(<span class="function"><span class="params">el</span> =&gt;</span> b.includes(el));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果用全数组混合累计数组项出现次数的方法，只需要一次遍历。（代码难看不喜欢（手动滑稽））</p>
 
       
     </div>
@@ -431,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/12/数组求和/" rel="next" title="数组求和之告别for循环">
-                <i class="fa fa-chevron-left"></i> 数组求和之告别for循环
+              <a href="/2018/11/28/配合Vue制作滑块组件/" rel="next" title="配合Vue制作滑块组件">
+                <i class="fa fa-chevron-left"></i> 配合Vue制作滑块组件
               </a>
             
           </div>
@@ -440,10 +437,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/28/配合Vue制作滑块组件/" rel="prev" title="配合Vue制作滑块组件">
-                配合Vue制作滑块组件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
